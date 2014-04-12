@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var money = 1000000
+      var gold = 1318.4
+      var platinum = 1461.6
+      var iron = 0.00446 
+      var copper = 0.18913
+      var zinc = 0.3
+      var palladium = 806.13
+      var crystals = 5000
+      var helium = 2.2
+      function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+      function yearlyInterest (mineral) {
+        mineral = mineral*1.03
+      };
+      var goldp = 1000
+      var platinumo = 1000
+      var irono = 1000
+      var coppero = 1000
+      var zinco = 1000
+      var palladiumo = 1000
+      var crystalso = 1000
+      var heliumo = 1000
+
+        function error(){
+          alert ('you do no have those resources.');
+        }
+
+        function goldz(){
+        var sellgold = prompt('how much do you want to sell?');
+        if (sellgold <= goldp) {
+          goldp = goldp - sellgold;
+          money = money + (sellgold*gold);
+          document.getElementById('gold1').innerHTML=goldp;
+          document.getElementById('money1').innerHTML=money;
+        }
+        else 
+        {
+          error()
+        }
+      }
+
+function platinumz(){
+        var sellplatinum = prompt('how much do you want to sell?');
+        if (sellplatinum <= platinumo) {
+          platinumo = platinumo - sellplatinum;
+          money = money + (sellplatinum*platinum);
+          document.getElementById('platinum1').innerHTML=platinumo;
+          document.getElementById('money1').innerHTML=money;
+        }
+        else 
+        {
+         error()
+        }
+      }
+
+      function ironz(){
+        var selliron = prompt('how much do you want to sell?');
+        if (selliron <= irono) {
+          irono = irono - selliron;
+          money = money + (selliron*iron);
+          document.getElementById('iron1').innerHTML=irono;
+          document.getElementById('money1').innerHTML=money;
+        }
+        else 
+        {
+         error()
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <p id='money'>money</p><br>
+    <p id='money1'><script type="text/javascript">document.getElementById('money1').innerHTML=money;</script></p><br>
+    <p id='gold' onclick='goldz()'>gold</p><br>
+    <p id='gold1'><script>document.getElementById('gold1').innerHTML=goldp;</script></p><br>
+    <p id='platinum' onclick="platinumz()">platinum</p><br>
+    <p id="platinum1"><script type="text/javascript">document.getElementById('platinum1').innerHTML=platinumo;</script></p><br>
+    <p id='iron' onclick="ironz()">iron</p><br>
+    <p id="iron1"><script type="text/javascript">document.getElementById('iron1').innerHTML=irono;</script></p><br>
+  </body>
+</html>
+
