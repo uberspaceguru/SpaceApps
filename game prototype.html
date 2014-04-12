@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:vml="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>JSGL empty page template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <!--[if vml]><style>vml\:* {behavior: url(#default#VML);}</style><![endif]-->
+    <script type="text/javascript" src="./jsgl.js"></script>
+  </head>
+  <body>
+    <div id="panel" style="width: 640px; height: 480px"></div>
+    <script type="text/javascript">
+      /* Instantiate JSGL Panel. */
+      myPanel = new jsgl.Panel(document.getElementById("panel"));
+
+      var intro = myPanel.createImage();
+myPanel.addElement(intro);
+
+ 	intro.setHorizontalAnchor(jsgl.HorizontalAnchor.CENTER);
+intro.setVerticalAnchor(jsgl.VerticalAnchor.MIDDLE);
+intro.setUrl('./intro2.jpg');
+intro.setLocationXY(300,300);
+
+intro.addClickListener(function(){
+      /* Start drawing! */
+ 
+     var earthframe1 = myPanel.createImage();
+myPanel.addElement(earthframe1);
+ 
+// configure the initial image
+earthframe1.setHorizontalAnchor(jsgl.HorizontalAnchor.CENTER);
+earthframe1.setVerticalAnchor(jsgl.VerticalAnchor.MIDDLE);
+earthframe1.setUrl('./earth1.jpg');
+earthframe1.setLocationXY(10,250);
+ 
+// create an animator transiting from 0.0 to 1.0 in 3 seconds
+var myAnimator1 = new jsgl.util.Animator();
+myAnimator1.setStartValue(0);
+myAnimator1.setEndValue(1);
+myAnimator1.setDuration(1000);
+
+ 
+// the step function for sizing the image / setting its opacity
+myAnimator1.addStepListener(function(t) {
+    earthframe1.setSizeWH(2000+t*2000, 2000+t*2000);
+  });
+ 
+
+myAnimator1.init();
+ 
+
+
+earthframe1.setCursor(jsgl.Cursor.POINTER);
+earthframe1.addClickListener(function(eventArgs) {
+    
+    myAnimator1.play();
+    myAnimator1.addEndListener(function(){
+
+
+  
+
+    var rocket1 = myPanel.createImage();
+myPanel.addElement(rocket1);
+ 
+
+rocket1.setHorizontalAnchor(jsgl.HorizontalAnchor.CENTER);
+rocket1.setVerticalAnchor(jsgl.VerticalAnchor.MIDDLE);
+rocket1.setUrl('./rocket1.gif');
+rocket1.setLocationXY(350,250);
+
+var myAnimator2 = new jsgl.util.Animator();
+myAnimator2.setStartValue(0);
+myAnimator2.setEndValue(1);
+myAnimator2.setDuration(4000);
+
+myAnimator2.addStepListener(function(t) {
+    rocket1.setSizeWH(10+t*80, 10+t*60);
+  });
+
+var myAnimator3 = new jsgl.util.Animator();
+myAnimator3.setStartValue(350);
+myAnimator3.setEndValue(600);
+myAnimator3.setDuration(5000);
+
+myAnimator3.addStepListener(function(t) {
+    rocket1.setLocationXY(t,250);
+  });
+
+
+myAnimator2.init();
+ 
+
+
+    myAnimator2.play();
+    myAnimator3.play();
+    myAnimator3.addEndListener(function(){
+    	var myAnimator4 = new jsgl.util.Animator();
+myAnimator4.setStartValue(1);
+myAnimator4.setEndValue(0);
+myAnimator4.setDuration(1000);
+
+ 
+// the step function for sizing the image / setting its opacity
+myAnimator4.addStepListener(function(t) {
+    earthframe1.setSizeWH(2000+t*2000, 2000+t*2000);
+  });
+
+myAnimator4.play();
+myAnimator4.addEndListener(function(){
+	var myAnimator5 = new jsgl.util.Animator();
+myAnimator5.setStartValue(600);
+myAnimator5.setEndValue(700);
+myAnimator5.setDuration(1000);
+
+myAnimator5.addStepListener(function(t) {
+    rocket1.setLocationXY(t,250);
+  });
+myAnimator5.play()
+myAnimator5.addEndListener(function(){
+	
+var cut1 = myPanel.createImage();
+myPanel.addElement(cut1);
+ 
+// configure the initial image
+cut1.setHorizontalAnchor(jsgl.HorizontalAnchor.CENTER);
+cut1.setVerticalAnchor(jsgl.VerticalAnchor.MIDDLE);
+cut1.setUrl('./cut2.jpg');
+cut1.setLocationXY(300,300);
+ 
+// create an animator transiting from 0.0 to 1.0 in 3 seconds
+var myAnimator6 = new jsgl.util.Animator();
+myAnimator6.setStartValue(0);
+myAnimator6.setEndValue(1);
+myAnimator6.setDuration(4000);
+
+ 
+// the step function for sizing the image / setting its opacity
+myAnimator6.addStepListener(function(t) {
+    cut1.setSizeWH(0+t*700, 0+t*800);
+
+myAnimator6.init();
+
+myAnimator6.play();
+});
+});
+});
+});    
+});
+});
+});
+
+    </script>
+  </body>
+</html>
+
