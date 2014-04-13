@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="./stylesheet1.css">
     <script>
       var money = 1000000
+      var earned = 0
       var gold = 1318.4
       var platinum = 1461.6
       var iron = 0.00446 
@@ -33,11 +34,14 @@
 
         function goldz(){
         var sellgold = prompt('how much do you want to sell?');
-        if (sellgold <= goldp & sellgold >= 0) {
+        if (sellgold <= goldp & sellgold >= 0 & sellgold % 1 == 0) {
           goldp = goldp - sellgold;
           money = money + (sellgold*gold);
+          earned = earned + (sellgold*gold)
           document.getElementById('gold1').innerHTML=goldp;
           document.getElementById('money1').innerHTML=money;
+          document.getElementById('earned1').innerHTML=earned;
+          document.getElementById('bar').style=earned;
         }
         else 
         {
@@ -47,9 +51,10 @@
 
 function platinumz(){
         var sellplatinum = prompt('how much do you want to sell?');
-        if (sellplatinum <= platinumo & sellplatinum >= 0) {
+        if (sellplatinum <= platinumo & sellplatinum >= 0 & sellplatinum % 1 == 0) {
           platinumo = platinumo - sellplatinum;
           money = money + (sellplatinum*platinum);
+          earned = earned + (sellplatinum*platinum)
           document.getElementById('platinum1').innerHTML=platinumo;
           document.getElementById('money1').innerHTML=money;
         }
@@ -61,9 +66,10 @@ function platinumz(){
 
       function ironz(){
         var selliron = prompt('how much do you want to sell?');
-        if (selliron <= irono & selliron >= 0) {
+        if (selliron <= irono & selliron >= 0 & selliron % 1 == 0) {
           irono = irono - selliron;
           money = money + (selliron*iron);
+          earned = earned + (selliron*iron)
           document.getElementById('iron1').innerHTML=irono;
           document.getElementById('money1').innerHTML=money;
         }
@@ -75,9 +81,10 @@ function platinumz(){
 
 function copperz(){
         var sellcopper = prompt('how much do you want to sell?');
-        if (sellcopper <= coppero & sellcopper >= 0) {
-          copper = coppero - sellcopper;
+        if (sellcopper <= coppero & sellcopper >= 0 & sellcopper % 1 == 0) {
+          coppero = coppero - sellcopper;
           money = money + (sellcopper*copper);
+          earned = earned + (sellcopper*copper)
           document.getElementById('copper1').innerHTML=coppero;
           document.getElementById('money1').innerHTML=money;
         }
@@ -89,9 +96,10 @@ function copperz(){
 
 function zincz(){
         var sellzinc = prompt('how much do you want to sell?');
-        if (sellzinc <= zinco & sellzinc >= 0) {
+        if (sellzinc <= zinco & sellzinc >= 0 & sellzinc % 1 == 0) {
           zinco = zinco - sellzinc;
           money = money + (sellzinc*zinc);
+          earned = earned + (sellzinc*zinc)
           document.getElementById('zinc1').innerHTML=zinco;
           document.getElementById('money1').innerHTML=money;
         }
@@ -104,9 +112,10 @@ function zincz(){
       
       function crystalz(){
         var sellcrystal = prompt('how much do you want to sell?');
-        if (sellcrystal <= crystalo & sellcrystal >= 0) {
+        if (sellcrystal <= crystalo & sellcrystal >= 0 & sellcrystal % 1 == 0) {
           crystalo = crystalo - sellcrystal;
           money = money + (sellcrystal*crystals);
+          earned = earned + (sellcrystals*crystals)
           document.getElementById('crystal1').innerHTML=crystalo;
           document.getElementById('money1').innerHTML=money;
         }
@@ -118,9 +127,10 @@ function zincz(){
 
       function heliumz(){
         var sellhelium = prompt('how much do you want to sell?');
-        if (sellhelium <= heliumo & sellhelium >= 0) {
+        if (sellhelium <= heliumo & sellhelium >= 0 & sellhelium % 1 == 0) {
           heliumo = heliumo - sellhelium;
           money = money + (sellhelium*helium);
+          earned = earned + (sellhelium*helium)
           document.getElementById('helium1').innerHTML=heliumo;
           document.getElementById('money1').innerHTML=money;
         }
@@ -148,7 +158,7 @@ function zincz(){
     <p id='gold1'><script>document.getElementById('gold1').innerHTML=goldp;</script></p>
     <p id="platinum1"><script type="text/javascript">document.getElementById('platinum1').innerHTML=platinumo;</script></p><br>
     <br>
-    <br>
+    <div id="b1"></div>
     <br>
     
     <p id='iron'>iron</p>
@@ -166,18 +176,22 @@ function zincz(){
     <p id="copper1"><script type="text/javascript">document.getElementById('copper1').innerHTML=coppero;</script></p>  
     <p id="zinc1"><script type="text/javascript">document.getElementById('zinc1').innerHTML=zinco;</script></p><br>
     <br>
-    <br>
+    <div id="b1"></div>
     <br>
 
     <p id='crystal'>crystal</p>
-    <p id='helium'>helium</p><br>
+    <p id='helium'>helium</p>
+    <p id="earned">earned this round</p><br>
 
     <p id="sellcrystal" onclick="crystalz()">sell</p>
     <p id="pl3h">
     <p id="sellhelium" onclick="heliumz()">sell</p><br>
+
     
     <p id="crystal1"><script type="text/javascript">document.getElementById('crystal1').innerHTML=crystalo;</script></p>
-    <p id="helium1"><script type="text/javascript">document.getElementById('helium1').innerHTML=heliumo;</script></p><br>
+    <p id="helium1"><script type="text/javascript">document.getElementById('helium1').innerHTML=heliumo;</script></p>
+    <p id="earned1"><script type="text/javascript">document.getElementById('earned1').innerHTML=earned;</script></p><br>
+
   </body>
 </html>
 

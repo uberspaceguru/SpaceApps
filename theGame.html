@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Asteroid Tycoon</title>
+</head>
+<body>
+<script src="main.js"></script>
+<script src ="jquery.js"></script>
+<script src= "jquery-ui.min.js"></script>
+ <script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
+<!-- Game setup components -->
+<P>Enter your Company Name: <INPUT TYPE="TEXT" id="companyName"><BR>
+<P>Enter your Company's Location: <INPUT TYPE="TEXT" id="companyLocation"><BR>
+<P>Enter the Current date: <input type="text" id="datepicker"><BR>
+Company Name: <p id='theName'>Not set</p>
+Company Location: <p id='theLocation'>Not set</p>
+Company start date: <p id='theDate'>Not set</p>
+Current account: <p id='currentAccount'>Not set</p>
+<font color="red">
+Current debt: <p id='currentDebt'><font color="red">Not set </font></p>
+</font>
+<button type="button" onclick="startGame()">Start Game</button>
+
+<HR>
+<H2>Mission Controls</H2>
+Current mission: <p id='turncounter'></p> 
+Current community sentiment: <p id='communitySentiment'></p> 
+Current community attitude: <p id='communityAttitude'></p> 
+
+<button type="button" onclick="startTurn()">New Mission</button>
+
+<P>How good was your landing? (good, ok, bad or crash)<INPUT TYPE="TEXT" id="landingQuality"><BR>
+<P>Market condition? (stable, climbing or glut)<INPUT TYPE="TEXT" id="marketQuality"><BR>
+<P>How much money did you make?<INPUT TYPE="TEXT" id="incomeMade"><BR>
+<button type="button" onclick="endTurn()">End Mission</button>
+
+<BR>Bonus awarded: <p id='bonus'></p>
+Current account (target is $12 Billion): <p id='newCurrentAccount'></p>
+</body>
+</html>
