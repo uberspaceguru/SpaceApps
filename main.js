@@ -127,7 +127,7 @@ function startTurn(){
 	document.getElementById('turncounter').innerHTML = TurnCounter;
 	document.getElementById('communitySentiment').innerHTML = TheCommunity.m_sentiment;
 	document.getElementById('communityAttitude').innerHTML =TheCommunity.m_attitude;
-
+	
 	
 }
 
@@ -174,6 +174,6 @@ function endTurn(){
 	bonusAwarded = (incomeMade * bonusPercentage) /100;
 	// Tell the player what the penalty or bonus is
 	document.getElementById('bonus').innerHTML =bonusAwarded;
-	TheCompany.m_currentFunding = TheCompany.m_currentFunding + incomeMade + bonusAwarded;
+	TheCompany.m_currentFunding = parseFloat(TheCompany.m_currentFunding) + parseFloat(incomeMade) + parseFloat(bonusAwarded);
 	document.getElementById('newCurrentAccount').innerHTML =TheCompany.m_currentFunding;
 }
